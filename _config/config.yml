@@ -4,7 +4,7 @@ Name: inbox
 
 InboxMessage:
   extensions:
-    - DataObject_MemberExtension
+    - HudhaifaS\DOM\Extensions\DataObject_MemberExtension
     
 SilverStripe\Security\Member:
   extensions:
