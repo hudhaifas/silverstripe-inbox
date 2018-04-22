@@ -1,6 +1,6 @@
 <?php
 
-namespace HudhaifaS\Inbox\Extensions;
+namespace HudhaifaS\Inbox\Extension;
 
 use HudhaifaS\Inbox\InboxPage;
 use HudhaifaS\Inbox\Model\InboxMessage;
