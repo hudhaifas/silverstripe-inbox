@@ -2,7 +2,7 @@
 
 namespace HudhaifaS\Inbox\View;
 
-use HudhaifaS\DOM\View\DataObjectPageController;
+use DataObjectPageController;
 use SilverStripe\Security\Member;
 use SilverStripe\View\Requirements;
 
@@ -33,7 +33,7 @@ class InboxPageController
     public function show() {
         $single = $this->getSingle();
         $single->IsRead = 1;
-        $single->write();
+//        $single->write();
 
         return $this->showSingle($single);
     }

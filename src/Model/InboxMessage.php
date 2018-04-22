@@ -3,8 +3,7 @@
 namespace HudhaifaS\Inbox\Model;
 
 use HudhaifaS\DOM\Model\ManageableDataObject;
-use HudhaifaS\Inbox\InboxNotification;
-use HudhaifaS\Inbox\InboxPage;
+use HudhaifaS\Inbox\View\InboxPage;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Security\Member;
