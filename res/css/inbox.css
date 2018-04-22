@@ -1,0 +1,72 @@
+.inbox-page .inbox-message-header {
+  margin-bottom: 20px;
+}
+.inbox-page .inbox-message-header .inbox-message-title {
+  font-weight: 700;
+  font-size: 22px;
+  border-bottom: 1px solid #dddfe2;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+.inbox-page .inbox-message-header .inbox-message-header-img {
+  float: left;
+  border-radius: 50%;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  height: 50px;
+  line-height: 50px;
+  overflow: hidden;
+  text-align: center;
+  text-shadow: none;
+  white-space: nowrap;
+  width: 50px;
+}
+.inbox-page .inbox-message-header .inbox-message-header-img:hover {
+  box-shadow: 0 0 0 1px #706b63;
+  text-decoration: none;
+}
+.inbox-page .inbox-message-header .inbox-message-header-img img {
+  width: 50px;
+  height: 50px;
+}
+.inbox-page .inbox-message-header .inbox-message-header-content {
+  margin-left: 60px;
+}
+.inbox-page .inbox-message-header .inbox-message-header-content .inbox-sender {
+  margin-bottom: 1px;
+}
+.inbox-page .inbox-message-header .inbox-message-header-content .inbox-sender a {
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 900;
+  cursor: pointer;
+  line-height: 1.3;
+}
+.inbox-page .inbox-message-header .inbox-message-header-content small {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #bebbb3;
+}
+.inbox-page .inbox-message.unread {
+  font-weight: bold;
+}
+.inbox-page .dataobject-header {
+  display: none;
+  visibility: hidden;
+}
+.inbox-page .dataobject-page-content .nav.nav-tabs.nav-loading {
+  max-height: 5px;
+  height: 5px;
+  padding: 0;
+}
+.inbox-page .dataobject-page-content .nav.nav-tabs.nav-loaded {
+  display: none;
+  visibility: hidden;
+}
+.inbox-page .dataobject-page-content .dataobject-related {
+  display: none;
+  visibility: hidden;
+}
+/*# sourceMappingURL=inbox.css.map */

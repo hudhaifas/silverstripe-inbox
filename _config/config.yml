@@ -1,0 +1,11 @@
+---
+Name: inbox
+---
+
+InboxMessage:
+  extensions:
+    - DataObject_MemberExtension
+    
+SilverStripe\Security\Member:
+  extensions:
+    - MemberInboxExtension

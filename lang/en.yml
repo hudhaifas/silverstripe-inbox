@@ -1,0 +1,13 @@
+en:
+  Inbox:
+    INBOX: 'Inbox'
+    MESSAGES: 'Messages'
+    FROM: 'From'
+    TIME: 'Time'
+    TO: 'To'
+
+    EMAIL_SUBJECT: '[New Message] {title}'
+    EMAIL_BODY: |
+        <p>$Receiver, You have received a new message from $Sender</p>
+        <p>$Content</p>
+        <a href="$MessageLink" target="_blank">Read The Complete Message</a>

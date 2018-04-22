@@ -1,0 +1,12 @@
+ar:
+  Inbox:
+    INBOX: 'الوارد'
+    MESSAGES: 'الرسائل'
+    FROM: 'المرسل'
+    TIME: 'الوقت'
+    TO: 'إلى'
+    EMAIL_SUBJECT: '[رسالة جديدة] {title}'
+    EMAIL_BODY: |
+        <p>$Receiver, لقد استلمت رسالة جديدة من $Sender</p>
+        <p>$Content</p>
+        <a href="$MessageLink" target="_blank">اقرأ الرسالة كاملة</a>

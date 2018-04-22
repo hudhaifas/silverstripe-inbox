@@ -1,0 +1,8 @@
+.inbox-page .inbox-message-header .inbox-message-header-img {
+  float: right;
+}
+.inbox-page .inbox-message-header .inbox-message-header-content {
+  margin-left: auto;
+  margin-right: 60px;
+}
+/*# sourceMappingURL=inbox-rtl.css.map */

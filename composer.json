@@ -1,0 +1,29 @@
+{
+    "name": "hudhaifas/silverstripe-inbox",
+    "description": "Send/Receive mesaages beetween Silverstripe members.",
+    "type": "silverstripe-module",
+    "homepage": "https://github.com/hudhaifas/silverstripe-inbox",
+    "keywords": ["silverstripe", "inbox", "message", "notification", "send", "receive"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hudhaifa Shatnawi",
+            "email": "me@hudhaifa.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/hudhaifas/silverstripe-inbox/issues"
+    },
+    "require": {
+        "silverstripe/framework": "^4",
+        "silverstripe/cms": "^4",
+        "silverstripe/vendor-plugin": "^1.0"
+    },
+    "extra": {
+        "installer-name": "inbox",
+        "expose": [
+            "res/css",
+            "res/images"
+        ]
+    }
+}
