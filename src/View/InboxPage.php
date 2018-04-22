@@ -2,7 +2,7 @@
 
 namespace HudhaifaS\Inbox\View;
 
-use HudhaifaS\DOM\DataObjectPage;
+use HudhaifaS\DOM\View\DataObjectPage;
 
 /**
  *

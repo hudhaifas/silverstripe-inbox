@@ -2,7 +2,7 @@
 
 namespace HudhaifaS\Inbox\View;
 
-use HudhaifaS\DOM\DataObjectPageController;
+use HudhaifaS\DOM\View\DataObjectPageController;
 use SilverStripe\Security\Member;
 use SilverStripe\View\Requirements;
 
