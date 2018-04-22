@@ -2,8 +2,8 @@
 
 namespace HudhaifaS\Inbox\Extension;
 
-use HudhaifaS\Inbox\InboxPage;
 use HudhaifaS\Inbox\Model\InboxMessage;
+use HudhaifaS\Inbox\View\InboxPage;
 use SilverStripe\ORM\DataExtension;
 
 /**
