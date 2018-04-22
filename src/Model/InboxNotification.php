@@ -1,8 +1,8 @@
 <?php
 
-namespace HudhaifaS\Inbox;
+namespace HudhaifaS\Inbox\Model;
 
-use HudhaifaS\Inbox\InboxMessage;
+use HudhaifaS\Inbox\Model\InboxMessage;
 use SilverStripe\Control\Email\Email;
 use SilverStripe\GraphQL\Controller;
 use SilverStripe\Security\Member;

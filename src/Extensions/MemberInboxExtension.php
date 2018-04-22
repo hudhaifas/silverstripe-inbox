@@ -1,8 +1,9 @@
 <?php
 
-namespace HudhaifaS\Inbox;
+namespace HudhaifaS\Inbox\Extensions;
 
 use HudhaifaS\Inbox\InboxPage;
+use HudhaifaS\Inbox\Model\InboxMessage;
 use SilverStripe\ORM\DataExtension;
 
 /**
@@ -14,7 +15,7 @@ class MemberInboxExtension
         extends DataExtension {
 
     private static $has_many = [
-        'Received' => 'InboxMessage.Receiver',
+        'Received' => InboxMessage::class . '.Receiver',
     ];
 
     public function getUnreadMessages() {

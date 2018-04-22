@@ -1,6 +1,6 @@
 <?php
 
-namespace HudhaifaS\Inbox;
+namespace HudhaifaS\Inbox\View;
 
 use HudhaifaS\DOM\DataObjectPageController;
 use SilverStripe\Security\Member;

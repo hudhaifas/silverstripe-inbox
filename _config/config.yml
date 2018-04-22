@@ -8,4 +8,4 @@ InboxMessage:
     
 SilverStripe\Security\Member:
   extensions:
-    - HudhaifaS\Inbox\MemberInboxExtension
+    - HudhaifaS\Inbox\Extensions\MemberInboxExtension

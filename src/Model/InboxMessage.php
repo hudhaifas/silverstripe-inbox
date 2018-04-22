@@ -1,8 +1,6 @@
 <?php
 
-namespace HudhaifaS\Inbox;
-
-namespace HudhaifaS\Inbox;
+namespace HudhaifaS\Inbox\Model;
 
 use HudhaifaS\DOM\Model\ManageableDataObject;
 use HudhaifaS\Inbox\InboxNotification;

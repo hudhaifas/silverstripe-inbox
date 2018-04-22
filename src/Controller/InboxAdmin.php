@@ -1,7 +1,8 @@
 <?php
 
-namespace HudhaifaS\Inbox;
+namespace HudhaifaS\Inbox\Controller;
 
+use HudhaifaS\Inbox\Model\InboxMessage;
 use SilverStripe\Admin\ModelAdmin;
 
 /**
@@ -13,7 +14,7 @@ class InboxAdmin
         extends ModelAdmin {
 
     private static $managed_models = [
-        'InboxMessage',
+        InboxMessage::class,
     ];
     private static $url_segment = 'inbox';
     private static $menu_title = "Inbox";
