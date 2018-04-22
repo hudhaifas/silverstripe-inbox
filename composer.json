@@ -1,7 +1,7 @@
 {
     "name": "hudhaifas/silverstripe-inbox",
     "description": "Send/Receive mesaages beetween Silverstripe members.",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "homepage": "https://github.com/hudhaifas/silverstripe-inbox",
     "keywords": ["silverstripe", "inbox", "message", "notification", "send", "receive"],
     "license": "MIT",
