@@ -3,6 +3,8 @@
 namespace HudhaifaS\Inbox\View;
 
 use DataObjectPage;
+use SilverStripe\ORM\DataObject;
+use SilverStripe\Security\Member;
 
 /**
  *
@@ -15,12 +17,11 @@ class InboxPage
     private static $table_name = 'InboxPage';
 
     public function canCreate($member = null, $context = array()) {
-//        if (!$member || !(is_a($member, Member::class)) || is_numeric($member)) {
-//            $member = Member::currentUserID();
-//        }
-//
-//        return (DataObject::get($this->owner->class)->count() > 0) ? false : true;
-        return true;
+        if (!$member || !(is_a($member, Member::class)) || is_numeric($member)) {
+            $member = Member::currentUserID();
+        }
+
+        return (DataObject::get($this->ClassName)->count() > 0) ? false : true;
     }
 
 }
