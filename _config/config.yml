@@ -2,7 +2,7 @@
 Name: inbox
 ---
 
-InboxMessage:
+HudhaifaS\Inbox\Model\InboxMessage:
   extensions:
     - HudhaifaS\DOM\Extension\DataObject_MemberExtension
     
