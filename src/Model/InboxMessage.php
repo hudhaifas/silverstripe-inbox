@@ -133,7 +133,7 @@ class InboxMessage
     }
 
     public function getObjectImage() {
-        return null;
+        return $this->CreatedBy()->ProfileImage();
     }
 
     public function getObjectItem() {
