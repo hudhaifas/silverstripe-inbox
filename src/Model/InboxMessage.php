@@ -161,7 +161,7 @@ class InboxMessage
 
         if ($this->Content) {
             $lists[] = [
-                'Title' => _t('Archives.CONTENT', 'Content'),
+                'Title' => _t('Inbox.MESSAGE', 'Message'),
                 'PlainContent' => 1,
                 'Content' => $this->renderWith('Includes/Message')
             ];

@@ -1,6 +1,7 @@
 en:
   Inbox:
     INBOX: 'Inbox'
+    MESSAGE: 'Message'
     MESSAGES: 'Messages'
     FROM: 'From'
     TIME: 'Time'

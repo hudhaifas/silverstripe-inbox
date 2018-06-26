@@ -1,6 +1,7 @@
 ar:
   Inbox:
     INBOX: 'الوارد'
+    MESSAGE: 'الرسالة'
     MESSAGES: 'الرسائل'
     FROM: 'المرسل'
     TIME: 'الوقت'
