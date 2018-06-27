@@ -42,7 +42,7 @@ class InboxPageController
 //        return DataObject::get('InboxMessage');
         $member = Member::currentUser();
 
-        return $member ? $member->Received() : null;
+        return $member ? $member->Received()->sort('Created DESC') : null;
     }
 
     public function isSearchable() {
