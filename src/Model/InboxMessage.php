@@ -8,6 +8,8 @@ use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Security\Member;
 use SilverStripe\Security\Permission;
+use Swift_RfcComplianceException;
+use Swift_SwiftException;
 
 /**
  *
@@ -94,9 +96,17 @@ class InboxMessage
     protected function onAfterWrite() {
         if (!$this->IsNotified) {
             $email = InboxNotification::create($this);
-            $email->send();
+            try {
+                $email->send();
+                $this->IsNotified = 1;
+            } catch (Swift_RfcComplianceException $ex) {
+                
+            } catch (Swift_SwiftException $ex) {
+                
+            } catch (Exception $ex) {
+                
+            } 
 
-            $this->IsNotified = 1;
             $this->write();
         }
 
