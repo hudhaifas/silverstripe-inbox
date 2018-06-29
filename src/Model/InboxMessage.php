@@ -94,18 +94,10 @@ class InboxMessage
     }
 
     protected function onAfterWrite() {
-        if (!$this->IsNotified) {
+        if (!$this->IsNotified && filter_var($this->Receiver()->Email, FILTER_VALIDATE_EMAIL)) {
             $email = InboxNotification::create($this);
-            try {
-                $email->send();
-                $this->IsNotified = 1;
-            } catch (Swift_RfcComplianceException $ex) {
-                
-            } catch (Swift_SwiftException $ex) {
-                
-            } catch (Exception $ex) {
-                
-            } 
+            $email->send();
+            $this->IsNotified = 1;
 
             $this->write();
         }
