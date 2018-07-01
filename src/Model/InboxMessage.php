@@ -8,8 +8,6 @@ use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Security\Member;
 use SilverStripe\Security\Permission;
-use Swift_RfcComplianceException;
-use Swift_SwiftException;
 
 /**
  *
