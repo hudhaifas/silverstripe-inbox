@@ -52,7 +52,7 @@ class InboxMessage
             return true;
         }
 
-        if ($member && $this->hasMethod('CreatedBy') && $member == $this->CreatedBy()) {
+        if ($member && $this->hasMethod('CreatedBy') && $this->CreatedBy() && $member->ID == $this->CreatedBy()->ID) {
             return true;
         }
 
