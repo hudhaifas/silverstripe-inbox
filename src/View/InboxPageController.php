@@ -32,8 +32,7 @@ class InboxPageController
 
     public function show() {
         $single = $this->getSingle();
-        $single->IsRead = 1;
-//        $single->write();
+        $single->markAsRead(1);
 
         return $this->showSingle($single);
     }

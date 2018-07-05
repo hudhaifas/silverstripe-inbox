@@ -6,8 +6,10 @@ use HudhaifaS\DOM\Model\ManageableDataObject;
 use HudhaifaS\Inbox\View\InboxPage;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataObject;
+use SilverStripe\ORM\DB;
 use SilverStripe\Security\Member;
 use SilverStripe\Security\Permission;
+use SilverStripe\Security\Security;
 
 /**
  *
@@ -174,6 +176,22 @@ class InboxMessage
 
     public function getObjectTitle() {
         return $this->Title;
+    }
+
+    public function markAsRead($flag = 1) {
+        $this->IsRead = $flag;
+
+        // Finds the specific class that directly holds the given field and returns the table
+        $table = DataObject::getSchema()->tableForField($this->ClassName, 'IsRead');
+
+        if (Security::database_is_ready()) {
+            DB::prepared_query(
+                    sprintf('UPDATE "%s" SET "IsRead" = ? WHERE "ID" = ?', $table),
+                    [
+                $this->IsRead,
+                $this->ID
+            ]);
+        }
     }
 
 }
