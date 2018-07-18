@@ -18,7 +18,8 @@
         "silverstripe/framework": "^4",
         "silverstripe/cms": "^4",
         "silverstripe/vendor-plugin": "^1.0",
-        "hudhaifas/silverstripe-dataobject-manager": "dev-master"
+        "hudhaifas/silverstripe-dataobject-manager": "dev-master",
+        "hudhaifas/silverstripe-member-ownership": "dev-master"
     },
     "extra": {
         "installer-name": "inbox",
