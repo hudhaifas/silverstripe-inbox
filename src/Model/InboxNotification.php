@@ -3,9 +3,9 @@
 namespace HudhaifaS\Inbox\Model;
 
 use SilverStripe\Control\Email\Email;
-use SilverStripe\GraphQL\Controller;
 use SilverStripe\Security\Member;
 use SilverStripe\Security\Security;
+use SilverStripe\View\Parsers\ShortcodeParser;
 
 /**
  *
@@ -30,12 +30,12 @@ class InboxNotification
         $this->message = $message;
 
         if (!$isSingleton) {
-            $this->from = $this->config()->email_from ? $this->config()->email_from : Email::config()->admin_email;
-            $this->to = $message->Receiver()->Email;
-            $this->subject = _t('Inbox.EMAIL_SUBJECT', '[New Message] {title}', array(
+            $this->setFrom($this->config()->email_from ? $this->config()->email_from : Email::config()->admin_email);
+            $this->setTo($message->Receiver()->Email);
+            $this->setSubject(_t('Inbox.EMAIL_SUBJECT', '[New Message] {title}', array(
                 'title' => $message->Title
-            ));
-            $this->body = $this->getParsedString(_t('Inbox.EMAIL_BODY', 'Empty'));
+            )));
+            $this->setBody($this->getParsedString(_t('Inbox.EMAIL_BODY', 'Empty')));
         }
     }
 
@@ -47,19 +47,17 @@ class InboxNotification
      * @return string
      */
     public function getParsedString($string) {
-        $absoluteBaseURL = $this->BaseURL();
         $variables = array(
             '$Receiver' => $this->message->Receiver()->FirstName,
             '$Sender' => $this->message->CreatedBy()->FirstName,
 //            '$Content' => $this->message->Content,
             '$Content' => $this->message->getMessageSummary(),
             '$MessageLink' => $this->message->getObjectLink(),
-            '$LostPasswordLink' => Controller::join_links(
-                    $absoluteBaseURL, singleton(Security::class)->Link('lostpassword')
-            )
+            '$LostPasswordLink' => Security::singleton()->Link('lostpassword')
         );
 
-        return str_replace(array_keys($variables), array_values($variables), $string);
+        return ShortcodeParser::get_active()->parse(str_replace(array_keys($variables), array_values($variables), $string));
+//        return DBField::create('HTMLText', str_replace(array_keys($variables), array_values($variables), $string));
     }
 
 }
