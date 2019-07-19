@@ -4,6 +4,7 @@ namespace HudhaifaS\Inbox\View;
 
 use DataObjectPageController;
 use SilverStripe\Security\Member;
+use SilverStripe\Security\Security;
 use SilverStripe\View\Requirements;
 
 /**
@@ -32,6 +33,10 @@ class InboxPageController
 
     public function show() {
         $single = $this->getSingle();
+        if (!$single) {
+            return Security::permissionFailure($this);
+        }
+
         $single->markAsRead(1);
 
         return $this->showSingle($single);
