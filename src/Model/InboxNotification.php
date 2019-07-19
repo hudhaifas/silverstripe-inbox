@@ -57,7 +57,6 @@ class InboxNotification
         );
 
         return ShortcodeParser::get_active()->parse(str_replace(array_keys($variables), array_values($variables), $string));
-//        return DBField::create('HTMLText', str_replace(array_keys($variables), array_values($variables), $string));
     }
 
 }
