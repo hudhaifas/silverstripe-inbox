@@ -30,8 +30,8 @@ class InboxNotification
         $this->message = $message;
 
         if (!$isSingleton) {
-           $this->setFrom($this->config()->email_from ? $this->config()->email_from : Email::config()->admin_email,
-                _t('Inbox.EMAIL_SENDER', 'Inbox Notification'));
+            $this->setFrom($this->config()->email_from ? $this->config()->email_from : Email::config()->admin_email,
+                    _t('Inbox.EMAIL_SENDER', 'Inbox Notification'));
             $this->setTo($message->Receiver()->Email);
             $this->setSubject(_t('Inbox.EMAIL_SUBJECT', '[New Message] {title}', array(
                 'title' => $message->Title
