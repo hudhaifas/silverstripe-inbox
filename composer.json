@@ -15,11 +15,10 @@
         "issues": "https://github.com/hudhaifas/silverstripe-inbox/issues"
     },
     "require": {
-        "silverstripe/framework": "^4",
-        "silverstripe/cms": "^4",
-        "silverstripe/vendor-plugin": "^1.0",
-        "hudhaifas/silverstripe-dataobject-manager": "dev-master",
-        "hudhaifas/silverstripe-member-ownership": "dev-master"
+        "silverstripe/framework": "^5",
+        "silverstripe/cms": "^5",
+        "silverstripe/vendor-plugin": "~2.0.1@stable",
+        "hudhaifas/silverstripe-dataobject-manager": "5.*"
     },
     "extra": {
         "installer-name": "inbox",

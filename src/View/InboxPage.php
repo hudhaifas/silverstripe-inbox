@@ -5,6 +5,7 @@ namespace HudhaifaS\Inbox\View;
 use DataObjectPage;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Security\Member;
+use SilverStripe\Security\Security;
 
 /**
  *
@@ -18,7 +19,7 @@ class InboxPage
 
     public function canCreate($member = null, $context = array()) {
         if (!$member || !(is_a($member, Member::class)) || is_numeric($member)) {
-            $member = Member::currentUserID();
+            $member = Security::getCurrentUser()?->ID;
         }
 
         return (DataObject::get($this->ClassName)->count() > 0) ? false : true;

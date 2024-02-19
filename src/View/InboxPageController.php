@@ -3,7 +3,7 @@
 namespace HudhaifaS\Inbox\View;
 
 use DataObjectPageController;
-use SilverStripe\Security\Member;
+use SilverStripe\Security\Security;
 use SilverStripe\View\Requirements;
 
 /**
@@ -32,15 +32,18 @@ class InboxPageController
 
     public function show() {
         $single = $this->getSingle();
-        $single->IsRead = 1;
-//        $single->write();
+        if (!$single) {
+            return Security::permissionFailure($this);
+        }
+
+        $single->markAsRead(1);
 
         return $this->showSingle($single);
     }
 
     public function getObjectsList() {
 //        return DataObject::get('InboxMessage');
-        $member = Member::currentUser();
+        $member = Security::getCurrentUser();
 
         return $member ? $member->Received()->sort('Created DESC') : null;
     }
