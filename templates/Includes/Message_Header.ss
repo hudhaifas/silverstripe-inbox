@@ -6,7 +6,7 @@
             <% if $CreatedBy.ProfileImage %>
                 <img src="$CreatedBy.ProfileImage.PaddedImage(50, 50).URL" class="img-circle img-user" />
             <% else %>
-                <img src="$ThemeDir/images/icon-user.png" class="img-circle img-user" />
+                <img src="$themedResourceURL('images/icon-user.png')" class="img-circle img-user" />
             <% end_if %>
         </a>
     </div>

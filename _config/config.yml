@@ -1,5 +1,6 @@
 ---
 Name: inbox
+After: dataobject-manager
 ---
 
 HudhaifaS\Inbox\Model\InboxMessage:

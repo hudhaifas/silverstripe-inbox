@@ -6,8 +6,10 @@ use HudhaifaS\DOM\Model\ManageableDataObject;
 use HudhaifaS\Inbox\View\InboxPage;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataObject;
+use SilverStripe\ORM\DB;
 use SilverStripe\Security\Member;
 use SilverStripe\Security\Permission;
+use SilverStripe\Security\Security;
 
 /**
  *
@@ -41,7 +43,7 @@ class InboxMessage
 
     public function canView($member = false) {
         if (!$member) {
-            $member = Member::currentUserID();
+            $member = Security::getCurrentUser()?->ID;
         }
 
         if ($member && is_numeric($member)) {
@@ -52,7 +54,7 @@ class InboxMessage
             return true;
         }
 
-        if ($member && $this->hasMethod('CreatedBy') && $member == $this->CreatedBy()) {
+        if ($member && $this->hasMethod('CreatedBy') && $this->CreatedBy() && $member->ID == $this->CreatedBy()->ID) {
             return true;
         }
 
@@ -61,7 +63,7 @@ class InboxMessage
 
     public function canEdit($member = false) {
         if (!$member) {
-            $member = Member::currentUserID();
+            $member = Security::getCurrentUser()?->ID;
         }
 
         if ($member && is_numeric($member)) {
@@ -77,7 +79,7 @@ class InboxMessage
 
     public function canCreate($member = null, $context = array()) {
         if (!$member) {
-            $member = Member::currentUserID();
+            $member = Security::getCurrentUser()?->ID;
         }
 
         if ($member && is_numeric($member)) {
@@ -121,15 +123,15 @@ class InboxMessage
     }
 
     public function getObjectDefaultImage() {
-        
+
     }
 
     public function getObjectEditLink() {
-        
+
     }
 
     public function getObjectEditableImageName() {
-        
+
     }
 
     public function getObjectImage() {
@@ -174,6 +176,22 @@ class InboxMessage
 
     public function getObjectTitle() {
         return $this->Title;
+    }
+
+    public function markAsRead($flag = 1) {
+        $this->IsRead = $flag;
+
+        // Finds the specific class that directly holds the given field and returns the table
+        $table = DataObject::getSchema()->tableForField($this->ClassName, 'IsRead');
+
+        if (Security::database_is_ready()) {
+            DB::prepared_query(
+                    sprintf('UPDATE "%s" SET "IsRead" = ? WHERE "ID" = ?', $table),
+                    [
+                $this->IsRead,
+                $this->ID
+            ]);
+        }
     }
 
 }
