@@ -4,7 +4,6 @@ namespace HudhaifaS\Inbox\Model;
 
 use HudhaifaS\DOM\Model\ManageableDataObject;
 use HudhaifaS\Inbox\View\InboxPage;
-use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\ORM\DB;
 use SilverStripe\Security\Member;
@@ -170,7 +169,7 @@ class InboxMessage
 
         $this->extend('extraTabs', $lists);
 
-        return new ArrayList($lists);
+        return $lists;
     }
 
     public function getObjectTabContent($tabKey, $page = 1) {
@@ -212,3 +211,4 @@ class InboxMessage
     }
 
 }
+
